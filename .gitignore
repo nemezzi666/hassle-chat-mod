@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Р›РѕРєР°Р»СЊРЅС‹Рµ Р°СЂС‚РµС„Р°РєС‚С‹
+*.log
+_*.png
+_*.py
+
+# Локальные инструменты
+.tools/
+

@@ -1,0 +1,41 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: py -m pip install -r requirements.txt
+
+      - name: Build app
+        run: >
+          py -m PyInstaller --noconfirm --onefile --windowed
+          --name HassleChatMod --icon icon.ico
+          --add-data "preview.jpg;." --add-data "fonts;fonts"
+          --add-data "icon.ico;." --collect-all repak hassle_chat_mod.py
+
+      - name: Build installer
+        run: >
+          py -m PyInstaller --noconfirm --onefile --windowed
+          --name HassleChatMod-Setup --icon icon.ico
+          --add-data "dist/HassleChatMod.exe;payload"
+          --add-data "icon.ico;." --add-data "icon.png;."
+          --add-data "README.md;payload" --add-data "LICENSE;payload"
+          setup.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HassleChatMod-windows
+          path: dist/*.exe
+          if-no-files-found: error
