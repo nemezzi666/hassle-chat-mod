@@ -6,7 +6,7 @@
 показывать, какой размер шрифта и нужны ли метки времени. Работает локально,
 без интернета и без вмешательства в серверную часть игры.
 
-**Скачать:** [Releases](../../releases) → `HassleChatMod-Setup.exe`
+**Скачать:** [HassleChatMod-Setup.exe](https://github.com/nemezzi666/hassle-chat-mod/releases/latest/download/HassleChatMod-Setup.exe) · [портативная версия](https://github.com/nemezzi666/hassle-chat-mod/releases/latest/download/HassleChatMod.exe)
 
 ![screenshot](screenshot.png)
 
